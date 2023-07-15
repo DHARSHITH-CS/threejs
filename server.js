@@ -25,6 +25,10 @@ const connectToMongoDB = async () => {
 
 connectToMongoDB();
 app.use(cors());
+app.get("/",(req,res)=>{
+  res.setHeader("Access-Control-Allow-Credentials","true");
+  res.send("API is running..");
+  
 
 // File upload route
 app.post('/upload', upload.single('file'), async (req, res) => {
